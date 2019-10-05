@@ -19,7 +19,7 @@ namespace WeatherApi
             services.AddControllers();
             services.AddOpenApiDocument(document =>
             {
-                document.DocumentName = "Weather Forecast API";
+                document.DocumentName = "v1";
                 document.Title = "Weather Forecast API";
                 document.Description = "This API returns weather forecasts";
                 document.Version = "v1";

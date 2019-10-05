@@ -7,8 +7,34 @@
           "Port": 5201
         }
       ],
-      "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/r/{everything}",
+      "DownstreamPathTemplate": "/api/recipes",
+      "UpstreamPathTemplate": "/api/recipes",
+      "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
+      "ReRouteIsCaseSensitive": false,
+      "DownstreamScheme": "http"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5201
+        }
+      ],
+      "DownstreamPathTemplate": "/recipes/{everything}",
+      "UpstreamPathTemplate": "/api/recipe/{everything}s",
+      "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
+      "ReRouteIsCaseSensitive": false,
+      "DownstreamScheme": "http"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5201
+        }
+      ],
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "UpstreamPathTemplate": "/api/r/swagger",
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
       "ReRouteIsCaseSensitive": false,
       "DownstreamScheme": "http"
@@ -20,8 +46,34 @@
           "Port": 5202
         }
       ],
-      "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/w/{everything}",
+      "DownstreamPathTemplate": "/api/weatherforecasts",
+      "UpstreamPathTemplate": "/api/weatherforecasts",
+      "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
+      "ReRouteIsCaseSensitive": false,
+      "DownstreamScheme": "http"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5202
+        }
+      ],
+      "DownstreamPathTemplate": "/weatherforecasts/{everything}",
+      "UpstreamPathTemplate": "/api/weatherforecasts/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
+      "ReRouteIsCaseSensitive": false,
+      "DownstreamScheme": "http"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5202
+        }
+      ],
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "UpstreamPathTemplate": "/api/w/swagger",
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
       "ReRouteIsCaseSensitive": false,
       "DownstreamScheme": "http"

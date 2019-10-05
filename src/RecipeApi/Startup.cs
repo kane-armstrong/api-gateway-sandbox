@@ -19,7 +19,7 @@ namespace RecipeApi
             services.AddControllers();
             services.AddOpenApiDocument(document =>
             {
-                document.DocumentName = "Recipe API";
+                document.DocumentName = "v1";
                 document.Title = "Recipes API";
                 document.Description = "This API returns recipes";
                 document.Version = "v1";

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace RecipeApi.Controllers
 {
     [ApiController]
-    [Route("recipes")]
+    [Route("api/recipes")]
     public class RecipeController : ControllerBase
     {
         private static readonly Random Random = new Random(123543);

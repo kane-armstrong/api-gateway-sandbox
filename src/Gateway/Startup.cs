@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using OcelotSwagger.Configuration;
+using OcelotSwagger.Extensions;
 
 namespace Gateway
 {
@@ -19,6 +21,8 @@ namespace Gateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.Configure<OcelotSwaggerOptions>(Configuration.GetSection(nameof(OcelotSwaggerOptions)));
+            services.AddOcelotSwagger();
             services.AddOcelot(Configuration);
         }
 
@@ -26,6 +30,7 @@ namespace Gateway
         {
             app.UseDeveloperExceptionPage();
             app.UseMvc();
+            app.UseOcelotSwagger();
             app.UseOcelot().Wait();
         }
     }
