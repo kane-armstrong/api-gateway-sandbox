@@ -17,6 +17,14 @@ namespace WeatherApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddOpenApiDocument(document =>
+            {
+                document.DocumentName = "Weather Forecast API";
+                document.Title = "Weather Forecast API";
+                document.Description = "This API returns weather forecasts";
+                document.Version = "v1";
+            });
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -28,6 +36,8 @@ namespace WeatherApi
                 endpoints.MapControllers();
             });
             app.UseHealthChecks("/", new HealthCheckOptions());
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

@@ -17,6 +17,14 @@ namespace RecipeApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddOpenApiDocument(document =>
+            {
+                document.DocumentName = "Recipe API";
+                document.Title = "Recipes API";
+                document.Description = "This API returns recipes";
+                document.Version = "v1";
+            });
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -28,6 +36,8 @@ namespace RecipeApi
                 endpoints.MapControllers();
             });
             app.UseHealthChecks("/", new HealthCheckOptions());
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }
