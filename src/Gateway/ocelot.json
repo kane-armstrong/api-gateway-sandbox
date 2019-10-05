@@ -7,7 +7,7 @@
           "Port": 5201
         }
       ],
-      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
       "UpstreamPathTemplate": "/r/{everything}",
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
       "ReRouteIsCaseSensitive": false,
@@ -20,7 +20,7 @@
           "Port": 5202
         }
       ],
-      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
       "UpstreamPathTemplate": "/w/{everything}",
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
       "ReRouteIsCaseSensitive": false,
