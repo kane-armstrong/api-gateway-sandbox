@@ -1,8 +1,11 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
-namespace OcelotGateway
+namespace Gateway
 {
     public class Startup
     {
@@ -15,17 +18,15 @@ namespace OcelotGateway
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddOcelot(Configuration);
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseMvc();
+            app.UseOcelot().Wait();
         }
     }
 }
