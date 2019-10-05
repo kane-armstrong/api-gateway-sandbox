@@ -4,7 +4,7 @@
     "RecipeApi": {
       "commandName": "Project",
       "launchBrowser": false,
-      "launchUrl": "recipes",
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5201",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
