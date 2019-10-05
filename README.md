@@ -3,7 +3,7 @@
 This repo contains the source for an experiment with Ocelot and Swagger. An unfortunate side effect of rerouting to your downstream services using Ocelot as a gateway
 is that you lose Swagger documentation. One option is to aggregate your disparate swagger docs post-generation, make any necessary edits (for validity or otherwise) by
 hand, then update your gateway source to ensure the Swagger is served. Nasty stuff. Of course you could just add a reroute directly to the Swagger docs, but that sucks.
-You lost one of the benefits of going for a gateway in the first place (facade) and it requires either a priori knowledge of upstream paths to the downstream Swagger
+You lose one of the benefits of going for a gateway in the first place (facade) and it requires either a priori knowledge of upstream paths to the downstream Swagger
 documents, or manual intervention on the gateway, e.g. a web page serving as a directory. 
 
 Question: can we somehow present Swagger documentation at the gateway level, without having to manually mess with json files, and in a seamless and relatively obvious fashion?
