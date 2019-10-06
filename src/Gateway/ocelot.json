@@ -21,7 +21,7 @@
         }
       ],
       "DownstreamPathTemplate": "/recipes/{everything}",
-      "UpstreamPathTemplate": "/api/recipe/{everything}s",
+      "UpstreamPathTemplate": "/api/recipes/{everything}",
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH", "DELETE", "OPTIONS" ],
       "ReRouteIsCaseSensitive": false,
       "DownstreamScheme": "http"
