@@ -11,6 +11,7 @@ Question: can we somehow present Swagger documentation at the gateway level, wit
 ## Todo:
 
 * [ ] Test this out with HTTP aggregation on the gateway
+* [ ] OcelotSwagger is MIT licensed, so should be safe to rip the relevant parts out and use NSwag instead of Swashbuckle and make some edits here and there to support client generation
 
 ## Consolidating Swagger documents on the gateway
 
